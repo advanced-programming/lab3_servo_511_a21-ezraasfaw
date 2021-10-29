@@ -3,8 +3,8 @@
  *			
  * Lab to control the position of a BDC motor
  * 
- * Author       Date        Version     Description
- * 
+ * Author                Date        Version     Description
+ * Ezra-Fikru Asfaw      10/29/2021     1.0         I implemented a scale to retrieve the correct pwm in a new file called ol_control.c.
  */
 
 #include <xc.h>
@@ -16,8 +16,8 @@
 #include "pwm.h"
 #include "pv_measure.h"
 #include "configuration.h"
-#include "public.h"
-
+#include "public.h" 
+#include "Tick_core.h"
 
 int main(void){
     /* init IOs */
@@ -46,6 +46,7 @@ int main(void){
     /* Super loop */
 	while (1){
         // call tasks here
+        ol_control();
     }   
 }
 
