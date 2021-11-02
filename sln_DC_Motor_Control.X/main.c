@@ -5,6 +5,8 @@
  * 
  * Author                Date        Version     Description
  * Ezra-Fikru Asfaw      10/29/2021     1.0         I implemented a scale to retrieve the correct pwm in a new file called ol_control.c.
+ * Ezra-Fikru Asfaw      11/02/2021     2.0         I modified the code in o_control so that it work in target mode by implementing a loop control task on a real motor. 
+ *                                                  It was able to display properly PV and PVM on the board LCD.
  */
 
 #include <xc.h>
