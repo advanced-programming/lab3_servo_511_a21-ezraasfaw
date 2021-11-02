@@ -9,10 +9,10 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <stdio.h>
 #include "initBoard.h"
 #include "console32.h"
 #include "DCMotor_model3.h"
-#include <stdio.h>
 #include "pwm.h"
 #include "pv_measure.h"
 #include "configuration.h"
@@ -21,23 +21,23 @@
 
 int main(void){
     /* init IOs */
-    //initIO();
+    initIO();
     
     /* init position measure */
-    //initPV_measure();
+    initPV_measure();
     
     /* init UARTs */
     initUart1();
     initUart2();
     
     /* init LCD */
-    //LCDInit();
+    LCDInit();
     
     /* ADC init*/
-    //initADC();
+    initADC();
  
     /* init PWM */
-    //initPWM();
+    initPWM();
     
     /* Test Uarts */
     fprintf2(C_UART1, "Uart1 says: Board reset \n");
