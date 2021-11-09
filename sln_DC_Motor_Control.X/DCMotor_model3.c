@@ -179,8 +179,8 @@ int get_pv(void){
 int readADC( int ch){
     long adc;
     adc = adc_sim;
-    adc = adc_sim + 0x8000;
-    adc = ((long)adc*1024/0x10000);
+//    adc = adc_sim + 0x8000;
+//    adc = ((long)adc*1024/0x10000);
     return adc;
 }
 #endif

@@ -48,7 +48,8 @@ int main(void){
     /* Super loop */
 	while (1){
         // call tasks here
-        ol_control();
+        //ol_control();
+        pid_control();
     }   
 }
 
