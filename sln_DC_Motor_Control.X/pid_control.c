@@ -14,9 +14,9 @@
 
 #define TICKS_ONE_MS    TICKS_PER_SECOND/100
 #define TICKS_TEN_MS    TICKS_PER_SECOND/1000
-#define KP    15
-#define KI    0.1
-#define WINDUP 100
+#define KP    30
+#define KI    0
+#define WINDUP 0
 
 
 static int sp;
@@ -51,8 +51,18 @@ sp = readADC(2);
 
 pv = get_pv(); 
 e = sp - pv;
+
+ITerm = ITerm + KI * e;
+
+if(ITerm>WINDUP) {
+    ITerm=WINDUP;
+}
+
+if(ITerm<-WINDUP){
+    ITerm=-WINDUP;
+}
+
 PTerm = KP * e;
-ITerm = ITerm + KI * e * WINDUP;
 
 
 /* Do set the PWM  				*/ 
@@ -65,7 +75,7 @@ set_pwm(on_time);
 
 /* Display info to LCD ? Target mode only  */ 
 
- sprintf(buf,"PV: %d    \nPWM: %d    \n", pv, pwm_value);
+    sprintf(buf,"PV: %d    \nSP: %d    \n", pv, sp);
  fprintf2(C_LCD, buf);
  
 } 
