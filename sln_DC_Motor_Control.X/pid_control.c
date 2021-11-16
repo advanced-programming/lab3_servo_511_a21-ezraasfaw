@@ -14,9 +14,9 @@
 
 #define TICKS_ONE_MS    TICKS_PER_SECOND/100
 #define TICKS_TEN_MS    TICKS_PER_SECOND/1000
-#define KP    30
-#define KI    0
-#define WINDUP 0
+#define KP    10
+#define KI    0.1
+#define WINDUP 150
 
 
 static int sp;
@@ -75,7 +75,7 @@ set_pwm(on_time);
 
 /* Display info to LCD ? Target mode only  */ 
 
-    sprintf(buf,"PV: %d    \nSP: %d    \n", pv, sp);
+ sprintf(buf,"PV: %d    \nSP: %d    \n", pv, sp);
  fprintf2(C_LCD, buf);
  
 } 
