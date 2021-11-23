@@ -14,9 +14,9 @@
 
 #define TICKS_ONE_MS    TICKS_PER_SECOND/100
 #define TICKS_TEN_MS    TICKS_PER_SECOND/1000
-#define KP    10
+#define KP    32
 #define KI    0.1
-#define WINDUP 150
+#define WINDUP 200
 
 
 static int sp;
