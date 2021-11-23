@@ -7,6 +7,13 @@
  * Ezra-Fikru Asfaw      10/29/2021     1.0         I implemented a scale to retrieve the correct pwm in a new file called ol_control.c.
  * Ezra-Fikru Asfaw      11/02/2021     2.0         I modified the code in o_control so that it work in target mode by implementing a loop control task on a real motor. 
  *                                                  It was able to display properly PV and PWM on the board LCD.
+ * 
+ * Ezra-Fikru Asfaw      10/09/2021     3.0         Using ol_control.c as a base, I implemented a closed loop PID control task in a new file called pid_control.c 
+ *                                                  for simulation mode.
+ * Ezra-Fikru Asfaw      10/16/2021     4.0         I modified the code in pid_control to work in target mode which displays PV and SP on the LCD screen of the motor 
+ *                                                  which is controlled using a potentiometer slider.
+ * 
+ * Ezra-Fikru Asfaw      10/23/2021     4.0         I modified some variables to gather data for the lab report.
  */
 
 #include <xc.h>
